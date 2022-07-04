@@ -7,17 +7,15 @@
     </head>
 
     <body>
-        <div class="setup">
+        <button id="resetButton">RESET</button>
+
+        <div id="setupDiv">
             <label>5 letter word:</label>
-            <input type="text" id="startWord">
+            <input type="text" id="gameWord" maxlength="5">
             <button id="startButton">SETUP</button>
         </div>
 
-        <div class="game">
-            <label>Guess:</label>
-            <input type="text" id="guessWord">
-            <button id="guessButton">SEND</button>
-
+        <div id="gameDiv">
             <table id="gameTable">
                 <tr class="table-row" id="rowA">
                     <td>1A</td>
@@ -62,6 +60,12 @@
                     <td>5F</td>
                 </tr>
             </table>
+
+            <br><br>
+
+            <label>Guess:</label>
+            <input type="text" id="guessWord">
+            <button id="guessButton">SEND</button>
         </div>
 
         <script type="text/javascript" src="script.js"></script>
