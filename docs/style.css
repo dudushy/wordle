@@ -30,9 +30,9 @@ button:hover {
 }
 button:active {
     opacity: 1;
-    /* border: 1px solid var(--text);
-    background-color: var(--wall);
-    color: var(--text); */
+    /* border: 1px solid var(--text); */
+    /* background-color: var(--wall); */
+    /* color: var(--text); */
 }
 
 #resetButton {
