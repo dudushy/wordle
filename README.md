@@ -1,2 +1,1 @@
-# [template-web](https://dudushy.github.io/template-web/)
-Template for Web projects
+# [wordle](https://dudushy.github.io/wordle/)
