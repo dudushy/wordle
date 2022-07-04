@@ -2,12 +2,68 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>page title</title>
+        <title>wordle</title>
         <link rel="stylesheet" href="style.css">
-        <script type="text/javascript" src="script.js"></script>
     </head>
 
     <body>
-        <h1>Hello World!</h1>
+        <div class="setup">
+            <label>5 letter word:</label>
+            <input type="text" id="startWord">
+            <button id="startButton">SETUP</button>
+        </div>
+
+        <div class="game">
+            <label>Guess:</label>
+            <input type="text" id="guessWord">
+            <button id="guessButton">SEND</button>
+
+            <table id="gameTable">
+                <tr class="table-row" id="rowA">
+                    <td>1A</td>
+                    <td>2A</td>
+                    <td>3A</td>
+                    <td>4A</td>
+                    <td>5A</td>
+                </tr>
+                <tr class="table-row" id="rowB">
+                    <td>1B</td>
+                    <td>2B</td>
+                    <td>3B</td>
+                    <td>4B</td>
+                    <td>5B</td>
+                </tr>
+                <tr class="table-row" id="rowC">
+                    <td>1C</td>
+                    <td>2C</td>
+                    <td>3C</td>
+                    <td>4C</td>
+                    <td>5C</td>
+                </tr>
+                <tr class="table-row" id="rowD">
+                    <td>1D</td>
+                    <td>2D</td>
+                    <td>3D</td>
+                    <td>4D</td>
+                    <td>5D</td>
+                </tr>
+                <tr class="table-row" id="rowE">
+                    <td>1E</td>
+                    <td>2E</td>
+                    <td>3E</td>
+                    <td>4E</td>
+                    <td>5E</td>
+                </tr>
+                <tr class="table-row" id="rowF">
+                    <td>1F</td>
+                    <td>2F</td>
+                    <td>3F</td>
+                    <td>4F</td>
+                    <td>5F</td>
+                </tr>
+            </table>
+        </div>
+
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
