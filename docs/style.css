@@ -1,6 +1,12 @@
+:root {
+    --wall: #000000;
+    --text: #ffffff;
+    --box: #4b4b4b;
+}
+
 body {
-    color: #ffffff;
-    background-color: #000000
+    color: var(--text);
+    background-color: var(--wall);
 }
 
 div {
@@ -15,22 +21,22 @@ button {
     opacity: .65;
     border-radius: 6px;
     padding: 6px;
-    /* border: 1px solid #000000; */
-    background-color: #ffffff;
-    color: #000000;
+    /* border: 1px solid var(--wall); */
+    background-color: var(--text);
+    color: var(--wall);
 }
 button:hover {
     opacity: .85;
 }
 button:active {
     opacity: 1;
-    /* border: 1px solid #ffffff;
-    background-color: #000000;
-    color: #ffffff; */
+    /* border: 1px solid var(--text);
+    background-color: var(--wall);
+    color: var(--text); */
 }
 
 #resetButton {
-    color: #ffffff;
+    color: var(--text);
     background-color: #ff0000;
 }
 
@@ -38,8 +44,18 @@ button:active {
     border-color: #ff869a;
 }
 
+.wordBox {
+    color: var(--text);
+    background-color: var(--box);
+    font-family: monospace;
+    text-align: center;
+    font-size: xx-large;
+    /* width: 300px;
+    height: 300px; */
+}
+
 #startButton {
-    color: #ffffff;
+    color: var(--text);
     background-color: #0800ff;
 }
 
@@ -48,7 +64,7 @@ button:active {
 }
 
 #guessButton {
-    color: #ffffff;
+    color: var(--text);
     background-color: #00ff22;
 }
 
@@ -60,7 +76,7 @@ button:active {
     text-align: center;
 }
 .table-row {
-    background-color: #4b4b4b;
+    background-color: var(--box);
 }
 #rowA {
     color: #ff762c;
