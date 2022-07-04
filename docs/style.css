@@ -12,17 +12,29 @@ div {
 
 button {
     font-weight: bold;
-    opacity: 0.6;
+    opacity: .65;
     border-radius: 6px;
+    padding: 6px;
+    /* border: 1px solid #000000; */
+    background-color: #ffffff;
+    color: #000000;
 }
 button:hover {
-    opacity: 1;
+    opacity: .85;
 }
 button:active {
     opacity: 1;
+    /* border: 1px solid #ffffff;
+    background-color: #000000;
+    color: #ffffff; */
 }
 
-.setup {
+#resetButton {
+    color: #ffffff;
+    background-color: #ff0000;
+}
+
+#setupDiv {
     border-color: #ff869a;
 }
 
@@ -30,36 +42,41 @@ button:active {
     color: #ffffff;
     background-color: #0800ff;
 }
-#startButton:active {
-    color: #0800ff;
-    background-color: #ffffff;
-}
 
-.game {
+#gameDiv {
     border-color: #b2ff86;
 }
 
 #guessButton {
-    color: #000000;
+    color: #ffffff;
     background-color: #00ff22;
-}
-#guessButton:active {
-    color: #00ff22;
-    background-color: #000000;
 }
 
 #gameTable {
     border: 2px solid #00ff22;
     border-radius: 6px;
     padding: 5px;
+    width: 100%;
+    text-align: center;
 }
 .table-row {
-    border: 2px solid #c71ec1;
-    border-radius: 6px;
-    padding: 5px;
+    background-color: #4b4b4b;
 }
 #rowA {
-    border: 2px solid #c71ec1;
-    border-radius: 6px;
-    padding: 5px;
+    color: #ff762c;
+}
+#rowB {
+    color: #fff12c;
+}
+#rowC {
+    color: #2cd1ff;
+}
+#rowD {
+    color: #ff2cd5;
+}
+#rowE {
+    color: #45ff2c;
+}
+#rowF {
+    color: #ff2c2c;
 }
