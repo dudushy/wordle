@@ -50,6 +50,8 @@ button:active {
     font-family: monospace;
     text-align: center;
     font-size: xx-large;
+    padding: 5px;
+    border-radius: 6px;
     /* width: 300px;
     height: 300px; */
 }
