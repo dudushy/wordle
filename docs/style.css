@@ -1,100 +1,115 @@
 :root {
-    --wall: #000000;
-    --text: #ffffff;
-    --box: #4b4b4b;
+  --wall: #000000;
+  --text: #ffffff;
+  --box: #4b4b4b;
 }
 
 body {
-    color: var(--text);
-    background-color: var(--wall);
+  color: var(--text);
+  background-color: var(--wall);
 }
 
 div {
-    justify-content: center;
-    border: 2px solid;
-    border-radius: 6px;
-    padding: 5px;
+  justify-content: center;
+  border: 2px solid;
+  border-radius: 6px;
+  padding: 5px;
 }
 
 button {
-    font-weight: bold;
-    opacity: .65;
-    border-radius: 6px;
-    padding: 6px;
-    /* border: 1px solid var(--wall); */
-    background-color: var(--text);
-    color: var(--wall);
+  font-weight: bold;
+  opacity: .65;
+  border-radius: 6px;
+  padding: 6px;
+  /* border: 1px solid var(--wall); */
+  background-color: var(--text);
+  color: var(--wall);
 }
+
 button:hover {
-    opacity: .85;
+  opacity: .85;
 }
+
 button:active {
-    opacity: 1;
-    /* border: 1px solid var(--text); */
-    /* background-color: var(--wall); */
-    /* color: var(--text); */
+  opacity: 1;
+  /* border: 1px solid var(--text); */
+  /* background-color: var(--wall); */
+  /* color: var(--text); */
 }
 
 #resetButton {
-    color: var(--text);
-    background-color: #ff0000;
+  color: var(--text);
+  background-color: #ff0000;
 }
 
 #setupDiv {
-    border-color: #ff869a;
+  border-color: #ff869a;
 }
 
 .wordBox {
-    color: var(--text);
-    background-color: var(--box);
-    font-family: monospace;
-    text-align: center;
-    font-size: xx-large;
-    padding: 5px;
-    border-radius: 6px;
-    /* width: 300px;
-    height: 300px; */
+  color: var(--text);
+  background-color: var(--box);
+  font-family: monospace;
+  text-align: center;
+  font-size: xx-large;
+  padding: 5px;
+  border-radius: 6px;
+  /* width: 300px;
+  height: 300px; */
 }
 
 #startButton {
-    color: var(--text);
-    background-color: #0800ff;
+  color: var(--text);
+  background-color: #0800ff;
 }
 
 #gameDiv {
-    border-color: #b2ff86;
+  border-color: #b2ff86;
+  /* display: flex; */
+  justify-content: center;
 }
 
 #guessButton {
-    color: var(--text);
-    background-color: #00ff22;
+  color: var(--text);
+  background-color: #00ff22;
 }
 
 #gameTable {
-    border: 2px solid #00ff22;
-    border-radius: 6px;
-    padding: 5px;
-    width: 100%;
-    text-align: center;
+  border: 2px solid #00ff22;
+  border-radius: 6px;
+  padding: 5px;
+  width: 60%;
+  text-align: center;
+  /* justify-content: center; */
 }
+
 .table-row {
-    background-color: var(--box);
+  /* background-color: var(--box); */
 }
+.table-item {
+  padding-bottom: 15px;
+}
+
 #rowA {
-    color: #ff762c;
+  background-color: #ff762c;
 }
+
 #rowB {
-    color: #fff12c;
+  background-color: #fff12c;
 }
+
 #rowC {
-    color: #2cd1ff;
+  background-color: #2cd1ff;
 }
+
 #rowD {
-    color: #ff2cd5;
+  background-color: #ff2cd5;
 }
+
 #rowE {
-    color: #45ff2c;
+  background-color: #45ff2c;
 }
+
 #rowF {
-    color: #ff2c2c;
+  background-color: #ff2c2c;
 }

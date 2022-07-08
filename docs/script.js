@@ -7,7 +7,7 @@ var setupDiv = document.getElementById("setupDiv");
 var gameWordInput = document.getElementById("gameWordInput");
 
 var gameWord = [];
-var regex = "qwertyuiopasdfghjklçzxcvbnm";
+var regex = "qwertyuiopasdfghjklzxcvbnm";
 
 //* Functions
 function setupGame() {
