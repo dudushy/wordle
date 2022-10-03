@@ -1,82 +1,84 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>wordle</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
 
-    <body>
-        <button id="resetButton">RESET</button>
+<head>
+  <meta charset="UTF-8">
+  <title>wordle</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-        <div id="setupDiv">
-            <table id="wordTable">
-                <tr>
-                    <td id="wordBox1"><span class="wordBox">&nbsp</span></td>
-                    <td id="wordBox2"><span class="wordBox">&nbsp</span></td>
-                    <td id="wordBox3"><span class="wordBox">&nbsp</span></td>
-                    <td id="wordBox4"><span class="wordBox">&nbsp</span></td>
-                    <td id="wordBox5"><span class="wordBox">&nbsp</span></td>
-                </tr>
-            </table>
-            <label>5 letter word</label>
-            <input type="text" id="gameWordInput" maxlength="5">
-            <button id="startButton">SETUP</button>
-        </div>
+<body>
+  <button id="resetButton">RESET</button>
 
-        <div id="gameDiv">
-            <table id="gameTable">
-                <tr class="table-row" id="rowA">
-                    <td class="table-item" id="A1"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="A2"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="A3"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="A4"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="A5"><span class="wordBox">&nbsp</span></td>
-                </tr>
-                <tr class="table-row" id="rowB">
-                    <td class="table-item" id="B1"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="B2"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="B3"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="B4"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="B5"><span class="wordBox">&nbsp</span></td>
-                </tr>
-                <tr class="table-row" id="rowC">
-                    <td class="table-item" id="C1"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="C2"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="C3"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="C4"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="C5"><span class="wordBox">&nbsp</span></td>
-                </tr>
-                <tr class="table-row" id="rowD">
-                    <td class="table-item" id="D1"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="D2"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="D3"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="D4"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="D5"><span class="wordBox">&nbsp</span></td>
-                </tr>
-                <tr class="table-row" id="rowE">
-                    <td class="table-item" id="E1"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="E2"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="E3"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="E4"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="E5"><span class="wordBox">&nbsp</span></td>
-                </tr>
-                <tr class="table-row" id="rowF">
-                    <td class="table-item" id="F1"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="F2"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="F3"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="F4"><span class="wordBox">&nbsp</span></td>
-                    <td class="table-item" id="F5"><span class="wordBox">&nbsp</span></td>
-                </tr>
-            </table>
+  <div id="setupDiv">
+    <table id="wordTable">
+      <tr>
+        <td id="wordBox1"><span class="wordBox">&nbsp</span></td>
+        <td id="wordBox2"><span class="wordBox">&nbsp</span></td>
+        <td id="wordBox3"><span class="wordBox">&nbsp</span></td>
+        <td id="wordBox4"><span class="wordBox">&nbsp</span></td>
+        <td id="wordBox5"><span class="wordBox">&nbsp</span></td>
+      </tr>
+    </table>
+    <label>5 letter word</label>
+    <input type="text" id="gameWordInput" maxlength="5">
+    <button id="startButton">SETUP</button>
+  </div>
 
-            <br><br>
+  <div id="gameDiv">
+    <table id="gameTable">
+      <tr class="table-row" id="rowA">
+        <td class="table-item" id="A1"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="A2"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="A3"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="A4"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="A5"><span class="wordBox">&nbsp</span></td>
+      </tr>
+      <tr class="table-row" id="rowB">
+        <td class="table-item" id="B1"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="B2"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="B3"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="B4"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="B5"><span class="wordBox">&nbsp</span></td>
+      </tr>
+      <tr class="table-row" id="rowC">
+        <td class="table-item" id="C1"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="C2"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="C3"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="C4"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="C5"><span class="wordBox">&nbsp</span></td>
+      </tr>
+      <tr class="table-row" id="rowD">
+        <td class="table-item" id="D1"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="D2"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="D3"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="D4"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="D5"><span class="wordBox">&nbsp</span></td>
+      </tr>
+      <tr class="table-row" id="rowE">
+        <td class="table-item" id="E1"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="E2"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="E3"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="E4"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="E5"><span class="wordBox">&nbsp</span></td>
+      </tr>
+      <tr class="table-row" id="rowF">
+        <td class="table-item" id="F1"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="F2"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="F3"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="F4"><span class="wordBox">&nbsp</span></td>
+        <td class="table-item" id="F5"><span class="wordBox">&nbsp</span></td>
+      </tr>
+    </table>
 
-            <label>Guess:</label>
-            <input type="text" id="guessWord">
-            <button id="guessButton">SEND</button>
-        </div>
+    <br><br>
 
-        <script type="text/javascript" src="script.js"></script>
-    </body>
+    <label>Guess:</label>
+    <input type="text" id="guessWord">
+    <button id="guessButton">SEND</button>
+  </div>
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
 </html>
