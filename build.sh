@@ -5,7 +5,7 @@ echo $TITLE 'setup config...'
 echo $TITLE '- - - - - - - - - - - - - - - - - - - - - - - - - -'
 #* vars
 
-PAGE_URL='https://dudushy.github.io/CRUD.ng/'
+PAGE_URL='https://dudushy.github.io/wordle/'
 echo $TITLE '- PAGE_URL=' $PAGE_URL
 
 PROJECT_NAME='CRUD'
