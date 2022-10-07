@@ -8,7 +8,7 @@ echo $TITLE '- - - - - - - - - - - - - - - - - - - - - - - - - -'
 PAGE_URL='https://dudushy.github.io/wordle/'
 echo $TITLE '- PAGE_URL=' $PAGE_URL
 
-PROJECT_NAME='CRUD'
+PROJECT_NAME='wordle'
 echo $TITLE '- PROJECT_NAME=' $PROJECT_NAME
 
 COMMIT_MESSAGE='`build.sh`'
