@@ -1,1 +1,11 @@
-<p>game works!</p>
+<div id="content" theme="dark">
+  <input type="text" maxlength="5">
+  <br>
+  <table *ngIf="gameGrid != undefined" id="gameGrid">
+    <tr *ngFor="let row of gameGrid.rows index as rowIndex">
+      <td class="box" *ngFor="let column of gameGrid.columns index as columnIndex">
+        r{{rowIndex}}-c{{columnIndex}}
+      </td>
+    </tr>
+  </table>
+</div>

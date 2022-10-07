@@ -1,0 +1,63 @@
+@import "/src/styles.scss";
+
+header {
+  padding: 1%;
+  border-radius: 10px;
+
+  a,
+  a:hover,
+  a:active,
+  a:visited {
+    color: $danger;
+  }
+
+  nav {
+    a {
+      cursor: pointer;
+      padding: 1%;
+      margin: 0.5%;
+      border-radius: 5px;
+      color: $box-near;
+      transition: 0.2s;
+      background-color: $key-dead;
+    }
+    a:hover {
+      transition: 0.2s;
+      background-color: $box-null;
+    }
+    a:active {
+      transition: 0.1s;
+      color: $box-null;
+      background-color: $box-miss;
+    }
+    a[isOn="true"] {
+      transition: 0.1s;
+      color: $box-hit;
+      background-color: $box-miss;
+    }
+  }
+}
+
+footer {
+  padding: 1%;
+  border-radius: 10px;
+
+  #heart {
+    color: $danger;
+  }
+
+  a,
+  a:hover,
+  a:active,
+  a:visited {
+    color: $tertiary;
+    background-color: rgba($dark, 0.4);
+    padding: 1%;
+    border-radius: 10px;
+    margin: 0.5%;
+    border: 1px dotted $danger;
+    animation: rainbow-color 2s linear;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+  }
+}

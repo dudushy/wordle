@@ -1,1 +1,31 @@
-<p>settings works!</p>
+<div id="content" theme="dark">
+  <fieldset>
+    <legend>Settings</legend>
+    <div>
+      <label for="theme">Theme</label>
+      <select #theme id="theme" [value]="GVS.getVar('theme')" (input)="app.toggleTheme(theme.value)">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="rows">Rows</label>
+      <select #rows id="rows" [value]="GVS.getVar('rows')" (input)="updateRows(rows.value)">
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="columns">Columns</label>
+      <select #columns id="columns" [value]="GVS.getVar('columns')" (input)="updateColumns(columns.value)">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </div>
+  </fieldset>
+</div>
