@@ -1,10 +1,15 @@
 <div id="content" theme="dark">
-  <input type="text" maxlength="5">
+  <p>{{targetWord.toUpperCase()}}</p>
   <br>
   <table *ngIf="gameGrid != undefined" id="gameGrid">
     <tr *ngFor="let row of gameGrid.rows index as rowIndex">
-      <td class="box" *ngFor="let column of gameGrid.columns index as columnIndex">
-        r{{rowIndex}}-c{{columnIndex}}
+      <td class="box" *ngFor="let column of gameGrid.columns index as columnIndex" [attr.letterStatus]="checkLetterStatus(rowIndex, columnIndex)">
+        <span class="attemptLetter" *ngIf="attempts[rowIndex] != undefined" [attr.rowIndex]="rowIndex" [attr.columnIndex]="columnIndex" [attr.letterStatus]="checkLetterStatus(rowIndex, columnIndex)">
+          {{attempts[rowIndex][columnIndex]}}
+        </span>
+        <span class="wordLetter" *ngIf="(currentWord[columnIndex] != undefined) && (currentAttempt == rowIndex)">
+          {{currentWord[columnIndex]}}
+        </span>
       </td>
     </tr>
   </table>

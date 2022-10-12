@@ -14,7 +14,19 @@
   .box {
     padding: 5%;
     // margin: 1%;
+    width: 10%;
+    height: 20%;
     border: 1px solid #fff;
     background-color: $key-dead;
   }
+
+  .attemptLetter, .wordLetter {
+    padding: 5%;
+    font-weight: bolder;
+
+    // margin: 1%;
+  }
+  *[letterStatus="hit"] { color: $dark; background-color: $box-hit; }
+  *[letterStatus="near"] { color: $dark; background-color: $box-near; }
+  *[letterStatus="miss"] { color: $light; background-color: $box-miss; }
 }
