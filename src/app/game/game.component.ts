@@ -130,7 +130,7 @@ export class GameComponent implements OnInit {
 
       if (this.attempts[attempt][index] == targetWord[index]) {
         return 'hit';
-      } else if (targetWord.includes(this.attempts[attempt][index])) {
+      } else if (targetWord.includes(this.attempts[attempt][index])) { //TODO check if char already used
         return 'near';
       } else if (!targetWord.includes(this.attempts[attempt][index])) {
         return 'miss';
