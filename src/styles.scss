@@ -23,6 +23,11 @@ $key-dead: #545454;
   animation-iteration-count: infinite;
 }
 
+* {
+  font-family: monospace;
+  font-size: 3vmax;
+}
+
 *[theme="dark"] {
   background-color: $dark;
   color: $light;
@@ -39,7 +44,6 @@ body {
   transition: 0.2s;
   text-align: center;
 }
-
 
 //? Animations
 @keyframes grayscale-color {
