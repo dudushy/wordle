@@ -19,6 +19,7 @@ export class GameComponent implements OnInit {
   currentWord: any = '';
   currentAttempt: any = 0;
   attempts: any = {};
+  extraChars: any = {};
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
@@ -36,15 +37,32 @@ export class GameComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(`[${this.title}#ngOnInit]`);
+    this.setupGame();
+  }
+
+  updateView() {
+    console.log(`[${this.title}#updateView]`);
+
+    this.cdr.detectChanges;
+    this.app.updateView(this.title);
+  }
+
+  redirectTo(url: any) {
+    this.app.redirectTo(url, this.title);
+
+    this.updateView();
+  }
+
+  setupGame() {
     this.gameGrid.rows = Array(parseInt(this.GVS.getVar('rows')));
     this.gameGrid.columns = Array(parseInt(this.GVS.getVar('columns')));
-    console.log(`[${this.title}#constructor] gameGrid`, this.gameGrid);
+    console.log(`[${this.title}#setupGame] gameGrid`, this.gameGrid);
 
     this.maxAttempts = parseInt(this.GVS.getVar('rows'));
-    console.log(`[${this.title}#constructor] maxAttempts`, this.maxAttempts);
+    console.log(`[${this.title}#setupGame] maxAttempts`, this.maxAttempts);
 
     this.wordSize = parseInt(this.GVS.getVar('columns'));
-    console.log(`[${this.title}#constructor] wordSize`, this.wordSize);
+    console.log(`[${this.title}#setupGame] wordSize`, this.wordSize);
 
     switch (this.wordSize) {
       case 3:
@@ -67,20 +85,14 @@ export class GameComponent implements OnInit {
         break;
     }
 
-    console.log(`[${this.title}#constructor] targetWord`, this.targetWord);
-  }
+    console.log(`[${this.title}#setupGame] targetWord`, this.targetWord);
 
-  updateView() {
-    console.log(`[${this.title}#updateView]`);
-
-    this.cdr.detectChanges;
-    this.app.updateView(this.title);
-  }
-
-  redirectTo(url: any) {
-    this.app.redirectTo(url, this.title);
-
-    this.updateView();
+    // this.extraChars = {
+    //   char: {
+    //     remaining: 0,
+    //     totalDupes: 0,
+    //   }
+    // };
   }
 
   handleKey(key: any) {
@@ -107,6 +119,36 @@ export class GameComponent implements OnInit {
         this.attempts[this.currentAttempt] = this.currentWord;
         console.log(`[${this.title}#handleKey] attempts`, this.attempts);
 
+        const targetWord = this.targetWord.toUpperCase();
+        console.log(`[${this.title}#handleKey] targetWord`, targetWord);
+
+        this.extraChars = {};
+        let previousChars = '';
+        for (const char in targetWord) {
+          console.log(`[${this.title}#handleKey] previousChars.includes(targetWord[${char}])`, previousChars.includes(targetWord[char]));
+          if (previousChars.includes(targetWord[char])) {
+            console.log(`[${this.title}#handleKey] extraChars[targetWord[${char}]]`, this.extraChars[targetWord[char]]);
+
+            if (this.extraChars[targetWord[char]]) {
+              this.extraChars[targetWord[char]].remaining++;
+              this.extraChars[targetWord[char]].totalDupes++;
+            } else {
+              this.extraChars[targetWord[char]] = {
+                remaining: 1,
+                totalDupes: 1,
+              };
+            }
+
+            console.log(`[${this.title}#handleKey] extraChars`, this.extraChars);
+          }
+
+          previousChars += targetWord[char];
+          console.log(`[${this.title}#handleKey] previousChars`, previousChars);
+        }
+
+        console.log(`[${this.title}#handleKey] (AFTER) previousChars`, previousChars);
+        console.log(`[${this.title}#handleKey] (AFTER) extraChars`, this.extraChars);
+
         this.currentWord = '';
         this.currentAttempt++;
       }
@@ -117,30 +159,58 @@ export class GameComponent implements OnInit {
     this.updateView();
   }
 
-  checkLetterStatus(attempt: any, index: any) { // attempts[rowIndex][columnIndex]
-    console.log(`[${this.title}#checkLetterStatus] attempt`, attempt);
-    console.log(`[${this.title}#checkLetterStatus] index`, index);
+  checkLetterStatus(attempt: any, char: any) { // attempts[rowIndex][columnIndex]
+    // console.log(`[${this.title}#checkLetterStatus] attempt`, attempt);
+    // console.log(`[${this.title}#checkLetterStatus] char`, char);
 
     const targetWord = this.targetWord.toUpperCase();
-    console.log(`[${this.title}#checkLetterStatus] targetWord`, targetWord);
+    // console.log(`[${this.title}#checkLetterStatus] targetWord`, targetWord);
 
     if (this.attempts[attempt]) {
-      console.log(`[${this.title}#checkLetterStatus] attempts[${attempt}][${index}]`, this.attempts[attempt][index]);
-      console.log(`[${this.title}#checkLetterStatus] targetWord[${index}]`, targetWord[index]);
+      console.log(`[${this.title}#checkLetterStatus] targetWord[${char}]`, targetWord[char]);
+      console.log(`[${this.title}#checkLetterStatus] attempts[${attempt}][${char}]`, this.attempts[attempt][char]);
 
-      if (this.attempts[attempt][index] == targetWord[index]) {
+      if (this.attempts[attempt][char] == targetWord[char]) {
+        console.log(`[${this.title}#checkLetterStatus] HIT`);
         return 'hit';
-      } else if (targetWord.includes(this.attempts[attempt][index])) { //TODO check if char already used
-        return 'near';
-      } else if (!targetWord.includes(this.attempts[attempt][index])) {
-        return 'miss';
-      } else {
-        return 'none';
       }
+
+      if (targetWord.includes(this.attempts[attempt][char])) {
+        console.log(`[${this.title}#checkLetterStatus] NEAR`);
+        return 'near';
+      }
+
+      //TODO check if char already used [BEGIN]
+      // if (targetWord.includes(this.attempts[attempt][char]) && this.extraChars[this.attempts[attempt][char]] == undefined) {
+      //   console.log(`[${this.title}#checkLetterStatus] NEAR`);
+      //   return 'near';
+      // }
+      // if (targetWord.includes(this.attempts[attempt][char]) && this.extraChars[this.attempts[attempt][char]] != undefined) {
+      //   if (this.extraChars[this.attempts[attempt][char]].remaining > 0) {
+      //     this.extraChars[this.attempts[attempt][char]].remaining--;
+
+      //     // if (this.extraChars[this.attempts[attempt][char]].remaining == 0) {
+      //     //   this.extraChars[this.attempts[attempt][char]] = undefined;
+      //     // }
+
+      //     console.log(`[${this.title}#checkLetterStatus] NEAR NEAR`);
+      //     console.log(`[${this.title}#checkLetterStatus] extraChars`, this.extraChars);
+      //     return 'near';
+      //   } else {
+      //     console.log(`[${this.title}#checkLetterStatus] NEAR MISS`);
+      //     return 'miss';
+      //   }
+      // }
+      //TODO check if char already used [END]
+
+      if (!targetWord.includes(this.attempts[attempt][char])) {
+        console.log(`[${this.title}#checkLetterStatus] MISS`);
+        return 'miss';
+      }
+
+      return 'none';
     } else {
       return 'none';
     }
-
-    this.updateView();
   }
 }
